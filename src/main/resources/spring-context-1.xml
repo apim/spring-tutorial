@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="customer" class="apim.github.tutorial.Customer">
+		<property name="id" value="1" />
+		<property name="name" value="APIM" />
+		<property name="balance" value="500" />
+	</bean>
+	
+	<bean id="customerCBI" class="apim.github.tutorial.CustomerCBI" init-method="customInit">
+		<property name="cId" value="10" />
+		<property name="cName" value="Test User" />
+	</bean>
+</beans>

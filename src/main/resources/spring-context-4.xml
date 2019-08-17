@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="dissertation" class="apim.github.tutorial.Dissertation">
+		<property name="mentorList">
+			<list>
+				<value>Niambh Connar</value>
+				<ref bean="designation" />
+			</list>
+		</property>
+		<property name="approverSet">
+			<set>
+				<value>Joe Walsh</value>
+				<ref bean="designation" />
+			</set>
+		</property>
+		<property name="referenceMap">
+			<map>
+				<entry key="book1" value="Let Us C"></entry>
+				<entry key="book2" value-ref="book"></entry>
+			</map>
+		</property>
+		<property name="chapterProperties">
+			<props>
+				<prop key="part1">Introduction</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="designation" class="apim.github.tutorial.Designation">
+		<property name="post" value="Professor" />
+		<property name="unit" value="Computer Science" />
+	</bean>
+
+	<bean id="book" class="apim.github.tutorial.Book">
+		<property name="isbn" value="123" />
+		<property name="title" value="Mastering Programming" />
+		<property name="author" value="Oscar Martin" />
+	</bean>
+</beans>
